@@ -1,0 +1,32 @@
+curl --include --request POST http://localhost:3000/albums \
+--header "Content-Type: application/json" \
+--data '{
+   "album": {
+        "id": 5,
+        "title": "Just BE",
+        "artist": "Brad C."
+   }
+}'
+
+# use no id if use of Active Record
+
+curl --include --request POST http://localhost:3000/albums \
+--header "Content-Type: application/json" \
+--data '{
+     "album": {
+          "title": "Just BE",
+          "artist": "Brad C."
+     }
+}'
+
+# patch request
+curl --include --request PATCH http://localhost:3000/albums/8 \
+--header "Content-Type: application/json" \
+--data '{
+     "album": {
+          "title": "Just BE is even more intense",
+          "artist": "Brad C. the Third"
+     }
+}'
+# delete request
+curl --include --request DELETE http://localhost:3000/albums/9 
